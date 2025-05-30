@@ -1,6 +1,6 @@
 import { DataSource } from "typeorm";
 import { Libro } from "./entity/book";
-
+const isProd = process.env.NODE_ENV === "production";
 export const AppDataSource = new DataSource({
   type: "postgres",
   host: "nwezqzsvkzauovpmlsyv.supabase.co",           // ej: db.xxxxxx.supabase.co
@@ -10,7 +10,7 @@ export const AppDataSource = new DataSource({
   database: "backendLibros",   // el nombre del proyecto Supabase
   synchronize: true,
   logging: false,
-  entities: [Libro],
+  entities: isProd ? ["dist/entity/*.js"] : [Libro],
   migrations: [],
   subscribers: [],
 });

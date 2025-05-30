@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2016",                                 
-    "module": "commonjs",                             
-    "esModuleInterop": true,                             
-    "forceConsistentCasingInFileNames": true,     
-    "moduleResolution": "node",  
-    "strict": true,                                      
-    "skipLibCheck": true,      
+    "target": "es2016",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "skipLibCheck": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
-                           
-  }
+    "experimentalDecorators": true,
+    "outDir": "./dist",                    // 👈 añade esto
+    "rootDir": "./src"                     // 👈 y esto también
+  },
+  "include": ["src"],                      // 👈 asegura que solo se compile src/
+  "exclude": ["node_modules"]
 }
