@@ -6,7 +6,11 @@ import cors from "cors";
 
 const app = express();
 app.use(cors({
-  origin: 'https://frontend-libros-one.vercel.app',
+  origin: [
+    'frontend-libros-89k8w4z6t-alejandro-escobar-ms-projects.vercel.app',
+    'https://frontend-libros-one.vercel.app',
+    'http://localhost:5173'
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
